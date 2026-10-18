@@ -3,8 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>社労士ゼロから合格ナビ</title>
-<meta name="description" content="社労士試験をゼロから始める人のための無料学習ツール。全体マップ、学習ロードマップ、○×一問一答、数字暗記カード、学習記録。">
+<title>社労士ゼロから合格ナビ｜独学の勉強法・○×一問一答・暗記カード（無料）</title>
+<meta name="description" content="社労士試験をゼロから独学で始める人のための無料学習ツール。10科目の全体マップ、試験日から逆算した学習ロードマップ、○×一問一答（解説つき）、数字暗記カード、学習時間の記録。登録不要。">
+<link rel="canonical" href="https://zero-kobo.github.io/sharoushi-navi/">
+<meta name="theme-color" content="#2457d6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ちいさなツール工房">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="社労士ゼロから合格ナビ｜無料の独学サポートツール">
+<meta property="og:description" content="社労士試験をゼロから始める人へ。学習ロードマップ、○×一問一答、数字暗記カード、学習記録を無料で。">
+<meta property="og:url" content="https://zero-kobo.github.io/sharoushi-navi/">
+<meta property="og:image" content="https://zero-kobo.github.io/sharoushi-navi/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="社労士ゼロから合格ナビ｜無料の独学サポートツール">
+<meta name="twitter:description" content="社労士試験をゼロから始める人へ。学習ロードマップ、○×一問一答、数字暗記カード、学習記録を無料で。">
+<meta name="twitter:image" content="https://zero-kobo.github.io/sharoushi-navi/ogp.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📘%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"社労士ゼロから合格ナビ","url":"https://zero-kobo.github.io/sharoushi-navi/","applicationCategory":"EducationalApplication","operatingSystem":"Web","inLanguage":"ja","description":"社労士試験をゼロから独学で始める人のための無料学習ツール。学習ロードマップ、○×一問一答、数字暗記カード、学習時間の記録。","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"publisher":{"@type":"Organization","name":"ちいさなツール工房","url":"https://zero-kobo.github.io/"}}
+</script>
 <style>
 :root{--bg:#f6f7fb;--card:#fff;--ink:#1d2433;--sub:#5b6478;--line:#e3e6ee;--pri:#2457d6;--pri-soft:#e8eefc;--ok:#1f9d55;--ok-soft:#e5f6ec;--ng:#d64545;--ng-soft:#fbe9e9;--warn:#b7791f;}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--card:#1a1f2a;--ink:#e8ebf2;--sub:#9aa3b5;--line:#2b3242;--pri:#6f95ff;--pri-soft:#1f2b48;--ok:#4cc584;--ok-soft:#173326;--ng:#ff7b7b;--ng-soft:#3a1f22;--warn:#e0a84a;}}
@@ -59,9 +76,18 @@ nav button.on{color:var(--pri);font-weight:700}
 .item b{display:block;font-size:14px;line-height:1.4}
 .item .muted{display:block;font-size:12px}
 .item .buy{display:block;font-size:12px;color:var(--pri);font-weight:700;margin-top:2px}
+.share{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.share a,.share button{flex:1 1 30%;text-align:center;font-size:13px;font-weight:700;padding:10px 6px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;cursor:pointer}
+.foot{max-width:720px;margin:0 auto;padding:8px 16px 24px;font-size:12px;color:var(--sub)}
+.foot details{border-top:1px solid var(--line);padding:10px 0}
+.foot summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.foot a{color:var(--pri)}
 table{width:100%;border-collapse:collapse;font-size:13px}
 td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
 </style>
+<!-- Google tag (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40QSGNSQEL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-40QSGNSQEL");</script>
 </head>
 <body>
 <header>
@@ -227,8 +253,23 @@ td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
   </div>
 </section>
 
-<p class="note">※ 問題・数字は2026年10月時点の制度にもとづく学習用の簡易版です。社労士試験は法改正が多いため、本番対策は必ず最新年度版のテキスト・過去問で確認してください。</p>
+<div class="card">
+  <h2>このツールをシェア</h2>
+  <p class="muted">一緒に勉強する仲間にどうぞ。共有されるのはページのURLだけで、学習記録や正答データは含まれません。</p>
+  <div class="share" id="share"></div>
+</div>
+<p class="note">※ 問題・数字は2026年10月時点の制度にもとづく学習用の簡易版です。社労士試験は法改正が多いため、本番対策は必ず最新年度版のテキスト・過去問で確認してください。試験日・申込期間は社会保険労務士試験オフィシャルサイトの発表で確認してください。</p>
 </main>
+
+<footer class="foot">
+  <p><a href="https://zero-kobo.github.io/">← ちいさなツール工房（ほかの無料ツール）</a></p>
+  <details><summary>運営者・お問い合わせ</summary><p>運営：ちいさなツール工房。不具合やご意見は、<a href="https://note.com/zero_kobo" target="_blank" rel="noopener">note</a>の記事のコメント欄で受け付けています。</p></details>
+  <details><summary>広告について</summary><p>このページには、楽天アフィリエイトによる広告（PR）が含まれます。リンクから商品が購入されると、運営者に報酬が支払われることがあります。紹介する教材は、内容を見て初学者に合うと考えたものを選んでいます。</p></details>
+  <details><summary>プライバシーポリシー</summary><p>サイト改善のため、Googleアナリティクス（GA4）を利用しています。Cookieなどで、閲覧ページや利用環境を個人を特定しない形で収集します。Cookieはブラウザの設定で無効にでき、<a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener">オプトアウト アドオン</a>で収集を止めることもできます。学習記録・正答データは、お使いのブラウザ内にだけ保存され、サーバーには送信されません。詳しくは<a href="https://zero-kobo.github.io/privacy.html">プライバシーポリシー</a>をご覧ください。</p></details>
+  <details><summary>免責事項</summary><p>内容の正確さには注意していますが、法改正などにより最新の制度と異なる場合があります。このツールの利用によって生じた損害について、運営者は責任を負いかねます。受験資格・試験日程・最新の法令は、必ず公式の情報で確認してください。</p></details>
+  <p>最終更新：2026年10月18日</p>
+  <p>© 2026 ちいさなツール工房</p>
+</footer>
 
 <nav>
   <button class="on" data-t="home" onclick="go('home')"><span>🏠</span>ホーム</button>
@@ -439,6 +480,18 @@ function renderLog(){
   $('days').innerHTML=html;
   $('paceTxt').textContent=`直近7日：${(wk/60).toFixed(1)}時間（目安は週20時間前後）`;
 }
+/* ===== シェア ===== */
+(function(){
+  const url='https://zero-kobo.github.io/sharoushi-navi/';const txt='社労士ゼロから合格ナビ｜無料の独学サポートツール';
+  const u=encodeURIComponent(url),t=encodeURIComponent(txt);
+  const links=[['X','https://x.com/intent/post?text='+t+'&url='+u],['LINE','https://social-plugins.line.me/lineit/share?url='+u],['Threads','https://www.threads.net/intent/post?text='+t+'%20'+u],['はてブ','https://b.hatena.ne.jp/entry/panel/?url='+u],['Facebook','https://www.facebook.com/sharer/sharer.php?u='+u]];
+  let html=links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join('');
+  html+='<button type="button" id="copyBtn">リンクをコピー</button>';
+  if(navigator.share)html+='<button type="button" id="nativeBtn">その他で共有</button>';
+  $('share').innerHTML=html;
+  $('copyBtn').onclick=async e=>{try{await navigator.clipboard.writeText(url);e.target.textContent='コピーしました';}catch(_){prompt('このURLをコピーしてください',url);}};
+  if($('nativeBtn'))$('nativeBtn').onclick=()=>navigator.share({title:txt,url}).catch(()=>{});
+})();
 render();
 </script>
 </body>
