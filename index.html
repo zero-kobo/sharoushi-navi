@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>社労士ゼロから合格ナビ</title>
+<meta name="description" content="社労士試験をゼロから始める人のための無料学習ツール。全体マップ、学習ロードマップ、○×一問一答、数字暗記カード、学習記録。">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1d2433;--sub:#5b6478;--line:#e3e6ee;--pri:#2457d6;--pri-soft:#e8eefc;--ok:#1f9d55;--ok-soft:#e5f6ec;--ng:#d64545;--ng-soft:#fbe9e9;--warn:#b7791f;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141b;--card:#1a1f2a;--ink:#e8ebf2;--sub:#9aa3b5;--line:#2b3242;--pri:#6f95ff;--pri-soft:#1f2b48;--ok:#4cc584;--ok-soft:#173326;--ng:#ff7b7b;--ng-soft:#3a1f22;--warn:#e0a84a;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.6;padding-bottom:84px}
+header{padding:18px 16px 8px;max-width:720px;margin:0 auto}
+header h1{font-size:20px;margin:0}
+header p{margin:2px 0 0;color:var(--sub);font-size:13px}
+main{max-width:720px;margin:0 auto;padding:0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+h2{font-size:17px;margin:0 0 10px}
+h3{font-size:15px;margin:14px 0 6px}
+.muted{color:var(--sub);font-size:13px}
+.big{font-size:40px;font-weight:800;line-height:1.1}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--pri-soft);border-radius:12px;padding:12px;text-align:center}
+.stat b{display:block;font-size:22px}
+button,select,input{font:inherit}
+.btn{border:0;border-radius:12px;padding:12px 16px;background:var(--pri);color:#fff;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--pri);border:1px solid var(--pri)}
+.btn.wide{width:100%}
+select,input[type=date],input[type=number]{padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+nav button{flex:1;background:none;border:0;color:var(--sub);font-size:11px;padding:4px 0;cursor:pointer}
+nav button span{display:block;font-size:20px}
+nav button.on{color:var(--pri);font-weight:700}
+.tab{display:none}.tab.on{display:block}
+.subj{border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0}
+.subj summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:8px}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--pri-soft);color:var(--pri);margin-right:4px}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--pri)}
+.q{font-size:17px;font-weight:600;margin:10px 0 16px}
+.ox{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ox button{font-size:34px;font-weight:800;padding:14px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.fb{border-radius:12px;padding:12px;margin-top:14px}
+.fb.ok{background:var(--ok-soft)}.fb.ng{background:var(--ng-soft)}
+.fb b{font-size:16px}
+.flash{min-height:170px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:18px;font-weight:700;cursor:pointer;border:2px dashed var(--line);border-radius:14px;padding:16px;user-select:none}
+.flash.back{background:var(--pri-soft);border-style:solid;border-color:var(--pri)}
+.step{border-left:3px solid var(--pri);padding:2px 0 8px 12px;margin:0 0 6px}
+.step b{display:block}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}
+.days div{aspect-ratio:1;border-radius:6px;background:var(--line);font-size:10px;display:flex;align-items:center;justify-content:center;color:var(--sub)}
+.days div.l1{background:#9db6f2;color:#123}.days div.l2{background:#5f86e6;color:#fff}.days div.l3{background:var(--pri);color:#fff}
+.chk{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:14px}
+.note{font-size:12px;color:var(--sub);margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
+</style>
+</head>
+<body>
+<header>
+  <h1>社労士ゼロから合格ナビ</h1>
+  <p>まったくの初学者が、本番までに「何を・どの順で・どれだけ」やるかが分かる学習ツール</p>
+</header>
+
+<main>
+<!-- ホーム -->
+<section class="tab on" id="t-home">
+  <div class="card">
+    <div class="muted">本試験まで</div>
+    <div class="big"><span id="cd">-</span><small style="font-size:18px"> 日</small></div>
+    <div class="muted" id="cdsub"></div>
+    <div class="row" style="margin-top:10px">
+      <input type="date" id="examDate">
+      <span class="muted">試験日（公式発表後に修正）</span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>今日のメニュー</h2>
+    <div id="todayPlan"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn" onclick="go('quiz');startQuiz('today')">今日の一問一答 10問</button>
+      <button class="btn ghost" onclick="go('card')">数字カード</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>あなたの進み具合</h2>
+    <div class="grid2">
+      <div class="stat"><b id="sTotal">0</b><span class="muted">累計学習時間</span></div>
+      <div class="stat"><b id="sStreak">0</b><span class="muted">連続学習日数</span></div>
+      <div class="stat"><b id="sRate">-</b><span class="muted">一問一答 正答率</span></div>
+      <div class="stat"><b id="sWeak">0</b><span class="muted">要復習の問題</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>まず知っておくこと（初学者向け）</h2>
+    <h3>① 受験資格があるか確認</h3>
+    <p class="muted">社労士試験は誰でも受けられる試験ではありません。大学・短大卒業、一定の実務経験、行政書士試験合格などの受験資格が必要です。まず試験センターの公式サイトで自分が該当するか確認しましょう。</p>
+    <h3>② 試験の形</h3>
+    <p class="muted">年1回・8月下旬の実施。<b>選択式</b>（8科目×5空欄＝40点）と<b>択一式</b>（7科目×10問＝70点）の2本立て。総得点だけでなく<b>科目ごとの基準点（足切り）</b>があり、1科目でも落とすと不合格になるのが最大の特徴です。合格率は例年1桁％台。</p>
+    <h3>③ 必要な勉強時間</h3>
+    <p class="muted">目安は800〜1,000時間。今から本番まで約10か月なら、<b>平日2時間＋休日4〜5時間</b>のペースです。</p>
+    <h3>④ 申込は春</h3>
+    <p class="muted">受験申込は例年4月中旬〜5月末頃。忘れないようにカレンダーに入れておきましょう。</p>
+  </div>
+</section>
+
+<!-- 科目マップ -->
+<section class="tab" id="t-map">
+  <div class="card">
+    <h2>学習ロードマップ</h2>
+    <p class="muted">労働系 → 社会保険系 → 一般常識 の順が王道。前の科目の知識が次で使い回せます。</p>
+    <div id="roadmap"></div>
+  </div>
+  <div class="card">
+    <h2>10科目の全体マップ</h2>
+    <p class="muted">タップで中身を表示。読み終えた科目は「1周した」にチェック。</p>
+    <div class="bar" style="margin:8px 0"><i id="mapBar" style="width:0"></i></div>
+    <div class="muted" id="mapTxt"></div>
+    <div id="subjList"></div>
+  </div>
+  <div class="card">
+    <h2>配点の内訳</h2>
+    <table>
+      <tr><th>科目</th><th>選択式</th><th>択一式</th></tr>
+      <tr><td>労働基準法・安衛法</td><td>5点</td><td>10問</td></tr>
+      <tr><td>労災保険法（＋徴収法）</td><td>5点</td><td>10問</td></tr>
+      <tr><td>雇用保険法（＋徴収法）</td><td>5点</td><td>10問</td></tr>
+      <tr><td>労働に関する一般常識</td><td>5点</td><td rowspan="2">10問</td></tr>
+      <tr><td>社会保険に関する一般常識</td><td>5点</td></tr>
+      <tr><td>健康保険法</td><td>5点</td><td>10問</td></tr>
+      <tr><td>厚生年金保険法</td><td>5点</td><td>10問</td></tr>
+      <tr><td>国民年金法</td><td>5点</td><td>10問</td></tr>
+      <tr><th>合計</th><th>40点</th><th>70点</th></tr>
+    </table>
+    <p class="muted">徴収法は選択式では出ず、択一式の労災・雇用の中で各3問程度出題されます。</p>
+  </div>
+</section>
+
+<!-- 一問一答 -->
+<section class="tab" id="t-quiz">
+  <div class="card" id="quizSetup">
+    <h2>○×一問一答</h2>
+    <p class="muted">本試験の択一式は「正しい／誤っている文を選ぶ」形式。1文ずつ○×で判断する練習が一番の近道です。</p>
+    <div class="row">
+      <select id="qScope" style="flex:1"></select>
+      <button class="btn" onclick="startQuiz(document.getElementById('qScope').value)">開始</button>
+    </div>
+    <div id="qSummary" style="margin-top:12px"></div>
+  </div>
+  <div class="card" id="quizBox" style="display:none">
+    <div class="row" style="justify-content:space-between">
+      <span class="tag" id="qTag"></span><span class="muted" id="qNum"></span>
+    </div>
+    <div class="q" id="qText"></div>
+    <div class="ox" id="qBtns">
+      <button onclick="answer(true)">○</button>
+      <button onclick="answer(false)">×</button>
+    </div>
+    <div id="qFb"></div>
+  </div>
+</section>
+
+<!-- 数字カード -->
+<section class="tab" id="t-card">
+  <div class="card">
+    <h2>数字暗記カード</h2>
+    <p class="muted">社労士は「数字の試験」。日数・割合・年齢をカードで覚えます。タップで裏返し。</p>
+    <div class="flash" id="flash" onclick="flip()"></div>
+    <div class="row" style="justify-content:space-between;margin-top:12px">
+      <button class="btn ghost" onclick="moveCard(-1)">← 前</button>
+      <span class="muted" id="cardNum"></span>
+      <button class="btn ghost" onclick="moveCard(1)">次 →</button>
+    </div>
+    <button class="btn ghost wide" style="margin-top:10px" onclick="shuffleCards()">シャッフル</button>
+  </div>
+</section>
+
+<!-- 記録 -->
+<section class="tab" id="t-log">
+  <div class="card">
+    <h2>今日の学習時間を記録</h2>
+    <div class="row">
+      <button class="btn ghost" onclick="addMin(15)">+15分</button>
+      <button class="btn ghost" onclick="addMin(30)">+30分</button>
+      <button class="btn ghost" onclick="addMin(60)">+1時間</button>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <input type="number" id="minIn" placeholder="分" min="1" style="width:100px">
+      <button class="btn" onclick="addMin(+document.getElementById('minIn').value)">追加</button>
+      <button class="btn ghost" onclick="resetToday()">今日をリセット</button>
+    </div>
+    <p class="muted" id="todayMin"></p>
+  </div>
+  <div class="card">
+    <h2>直近4週間</h2>
+    <div class="days" id="days"></div>
+    <p class="muted" id="paceTxt" style="margin-top:10px"></p>
+  </div>
+  <div class="card">
+    <h2>データ</h2>
+    <p class="muted">記録はこの端末のブラウザ内にだけ保存されます。</p>
+    <button class="btn ghost" onclick="resetAll()">すべての記録を消去</button>
+  </div>
+</section>
+
+<p class="note">※ 問題・数字は2026年10月時点の制度にもとづく学習用の簡易版です。社労士試験は法改正が多いため、本番対策は必ず最新年度版のテキスト・過去問で確認してください。</p>
+</main>
+
+<nav>
+  <button class="on" data-t="home" onclick="go('home')"><span>🏠</span>ホーム</button>
+  <button data-t="map" onclick="go('map')"><span>🗺️</span>科目マップ</button>
+  <button data-t="quiz" onclick="go('quiz')"><span>⭕</span>一問一答</button>
+  <button data-t="card" onclick="go('card')"><span>🔢</span>数字カード</button>
+  <button data-t="log" onclick="go('log')"><span>📈</span>記録</button>
+</nav>
+
+<script>
+/* ===== データ ===== */
+const SUBJ=[
+ {id:'roki',name:'労働基準法',g:'労働',h:'約90時間',d:'働くときの最低ルール（労働時間・休日・賃金・解雇・有給など）。全科目の土台で、身近な話が多く最初の1科目に最適。',p:'条文の数字（8時間・30日・6か月・8割など）を正確に。'},
+ {id:'anei',name:'労働安全衛生法',g:'労働',h:'約30時間',d:'職場の安全・健康を守るための法律。産業医・衛生管理者・健康診断など。',p:'深追いは禁物。「何人以上で何を選任」を表で覚える。'},
+ {id:'rosai',name:'労災保険法',g:'労働',h:'約70時間',d:'仕事中・通勤中のケガや病気への補償。療養・休業・障害・遺族などの給付。',p:'給付ごとに「いつから・いくら・いつまで」を整理。'},
+ {id:'koyo',name:'雇用保険法',g:'労働',h:'約80時間',d:'失業したときの基本手当や、育児休業給付・教育訓練給付など。',p:'受給要件と所定給付日数の表がカギ。'},
+ {id:'choshu',name:'労働保険徴収法',g:'労働',h:'約40時間',d:'労災保険と雇用保険の保険料をどう計算・納付するか。',p:'年度更新・概算／確定保険料の流れを図で理解。'},
+ {id:'kenpo',name:'健康保険法',g:'社会保険',h:'約90時間',d:'会社員の医療保険。傷病手当金・出産手当金・高額療養費など。',p:'社会保険系の入口。標準報酬月額の仕組みは厚年と共通。'},
+ {id:'kokunen',name:'国民年金法',g:'社会保険',h:'約100時間',d:'全国民共通の基礎年金。被保険者の種別、老齢・障害・遺族基礎年金。',p:'年金は国年→厚年の順で。1号・2号・3号の区別から。'},
+ {id:'kosei',name:'厚生年金保険法',g:'社会保険',h:'約110時間',d:'会社員の上乗せ年金。最大の難所で、経過措置が複雑。',p:'国年との違いに注目すると覚えやすい。'},
+ {id:'roippan',name:'労務管理その他の労働に関する一般常識',g:'一般常識',h:'約60時間',d:'労働契約法・育児介護休業法・男女雇用機会均等法・最低賃金法など多数の法律＋労働統計・白書。',p:'範囲が広く足切りの危険科目。頻出法令を優先。'},
+ {id:'shaippan',name:'社会保険に関する一般常識',g:'一般常識',h:'約50時間',d:'国民健康保険・介護保険・高齢者医療・社労士法など。',p:'介護保険と社労士法は毎年狙われやすい。'}
+];
+const ROAD=[
+ ['2026年10〜11月','労働基準法・労働安全衛生法','まずテキストを1周。完璧を目指さず、全体像をつかむ。'],
+ ['2026年12月〜2027年1月','労災保険法・雇用保険法・徴収法','労働系を仕上げる。前の科目の一問一答も毎日少しずつ。'],
+ ['2027年2〜3月','健康保険法・国民年金法','社会保険系へ。年金は「国年→厚年」の順。'],
+ ['2027年4〜5月','厚生年金保険法・一般常識2科目','4月中旬〜5月末頃に受験申込。忘れずに。'],
+ ['2027年6〜7月','全科目の過去問・模試・法改正・白書','2周目以降で一気に得点力が上がる時期。'],
+ ['2027年8月','総まとめ・本番','新しい教材に手を出さず、数字と苦手の確認に集中。']
+];
+const Q=[
+ ['roki','法定労働時間は、原則として1日8時間・1週40時間である。',1,'労基法32条。一部の小規模な特例事業場は週44時間。'],
+ ['roki','労働時間が8時間を超える場合、少なくとも45分の休憩を与えれば足りる。',0,'8時間超は少なくとも1時間。6時間超〜8時間以下が45分。'],
+ ['roki','労働者を解雇する場合、原則として少なくとも14日前に予告しなければならない。',0,'少なくとも30日前に予告するか、30日分以上の平均賃金（解雇予告手当）を支払う。'],
+ ['roki','年次有給休暇は、雇入れ日から6か月継続勤務し、全労働日の8割以上出勤した労働者に10日付与される。',1,'その後は勤続年数に応じて増え、最大20日。'],
+ ['roki','賃金は、通貨で、直接労働者に、その全額を、毎月1回以上、一定の期日を定めて支払わなければならない。',1,'これが「賃金支払いの5原則」。例外（口座振込・税の控除など）もセットで覚える。'],
+ ['roki','就業規則の作成・届出義務があるのは、常時50人以上の労働者を使用する使用者である。',0,'常時10人以上。'],
+ ['roki','深夜業（午後10時〜午前5時）の割増賃金率は2割5分以上である。',1,'時間外と深夜が重なると5割以上になる。'],
+ ['roki','1か月60時間を超える時間外労働の割増賃金率は、中小企業を含め5割以上である。',1,'中小企業への猶予は2023年4月に終了。'],
+ ['roki','産後8週間を経過しない女性でも、本人が請求すればどんな業務にも就かせることができる。',0,'産後6週間を経過し、本人が請求し、医師が支障ないと認めた業務に限り就業可。'],
+ ['anei','常時50人以上の労働者を使用する事業場では、産業医を選任しなければならない。',1,'衛生管理者・衛生委員会も50人以上がひとつの基準。'],
+ ['anei','衛生管理者の選任義務は、常時10人以上の事業場から生じる。',0,'常時50人以上。10〜49人の事業場は衛生推進者等。'],
+ ['rosai','業務災害による休業補償給付は、休業4日目から支給される。',1,'最初の3日間（待期）は事業主が労基法の休業補償を行う。'],
+ ['rosai','休業補償給付の額は、1日につき給付基礎日額の80％である。',0,'60％。別に休業特別支給金20％が出るので合計80％になる。'],
+ ['rosai','通勤途中のケガは、労災保険の対象外である。',0,'通勤災害として保険給付の対象。'],
+ ['rosai','労災保険の保険料は、労働者と事業主が折半で負担する。',0,'全額事業主負担。'],
+ ['koyo','基本手当の受給には、原則として離職日以前2年間に被保険者期間が通算12か月以上必要である。',1,'倒産・解雇等による離職者などは、1年間に6か月以上でもよい。'],
+ ['koyo','基本手当は、求職の申込み後、失業している日が通算7日に満たない間は支給されない。',1,'これが待期期間（7日）。'],
+ ['koyo','雇用保険の保険料は、全額事業主負担である。',0,'失業等給付・育児休業給付の分は労使で負担。雇用保険二事業の分は事業主のみ。'],
+ ['choshu','労働保険の年度更新の申告・納付期間は、原則として6月1日から7月10日までである。',1,'前年度の確定保険料と今年度の概算保険料をまとめて申告する。'],
+ ['choshu','労働保険料の計算の基礎となる保険年度は、1月1日から12月31日までである。',0,'4月1日から翌年3月31日まで。'],
+ ['roippan','有期労働契約が通算5年を超えて更新された場合、労働者が申し込めば無期労働契約に転換される。',1,'労働契約法18条の「無期転換ルール」。'],
+ ['roippan','育児休業は、原則として子が3歳に達するまで取得できる。',0,'原則1歳まで。保育所に入れない等の場合は最長2歳まで延長可。'],
+ ['roippan','地域別最低賃金は、都道府県ごとに定められている。',1,'最低賃金法。ほかに特定（産業別）最低賃金もある。'],
+ ['shaippan','介護保険の第2号被保険者は、40歳以上65歳未満の医療保険加入者である。',1,'第1号被保険者は65歳以上の者。'],
+ ['shaippan','後期高齢者医療制度の対象は、原則として70歳以上の者である。',0,'原則75歳以上（一定の障害がある65歳以上を含む）。'],
+ ['shaippan','国民健康保険は、都道府県が当該都道府県内の市町村とともに保険者となる。',1,'2018年度から都道府県も保険者に加わった。'],
+ ['kenpo','傷病手当金は、労務不能となった日から連続3日間の待期を経て、4日目から支給される。',1,'待期は「連続」3日。休日を含んでもよい。'],
+ ['kenpo','傷病手当金の支給期間は、支給開始日から通算して1年6か月である。',1,'2022年1月から「通算」に変わった。'],
+ ['kenpo','70歳未満の者の医療費の一部負担金の割合は、原則2割である。',0,'原則3割。義務教育就学前は2割。'],
+ ['kenpo','被扶養者の収入要件は、原則として年間収入130万円未満である。',1,'60歳以上や障害者は180万円未満など、年齢等による例外がある。'],
+ ['kenpo','健康保険の標準報酬月額は、50等級に区分されている。',1,'厚生年金は32等級。違いが頻出。'],
+ ['kosei','厚生年金保険の被保険者は、70歳に達すると資格を喪失する。',1,'健康保険は75歳（後期高齢者医療へ移行）で喪失。'],
+ ['kosei','厚生年金保険の保険料率は、18.3％で固定されている。',1,'2017年9月以降固定。労使折半なので本人負担は9.15％。'],
+ ['kosei','厚生年金保険の保険料は、全額被保険者が負担する。',0,'事業主と被保険者が半分ずつ負担（労使折半）。'],
+ ['kokunen','国民年金の第1号被保険者は、日本国内に住所を有する20歳以上60歳未満の者で、第2号・第3号に該当しない者である。',1,'自営業者・学生・無職の人など。'],
+ ['kokunen','第3号被保険者は、第2号被保険者に扶養される20歳以上60歳未満の配偶者である。',1,'第3号本人は保険料の負担なし。'],
+ ['kokunen','老齢基礎年金の受給資格期間は25年である。',0,'2017年8月から10年に短縮された。'],
+ ['kokunen','老齢基礎年金を繰り下げると、1か月あたり0.7％増額される。',1,'最大75歳まで繰下げ可（1952年4月2日以降生まれ）＝最大84％増。'],
+ ['kokunen','老齢基礎年金の繰上げ受給の減額率は、1か月あたり0.4％である（1962年4月2日以降生まれの者）。',1,'60歳まで繰り上げると最大24％減。'],
+ ['kokunen','国民年金保険料の納付期限は、当月末日である。',0,'翌月末日。'],
+ ['kokunen','付加年金の額は、200円×付加保険料納付済月数である。',1,'付加保険料は月400円。2年で元が取れる計算。'],
+ ['kokunen','国民年金の保険料を徴収する権利の時効は5年である。',0,'2年。給付を受ける権利（支分権）は5年。']
+].map((r,i)=>({id:i,s:r[0],q:r[1],a:!!r[2],e:r[3]}));
+const CARDS=[
+ ['法定労働時間','1日8時間・1週40時間'],['休憩時間','6時間超 → 45分以上\n8時間超 → 1時間以上'],['解雇予告','30日前 or 30日分以上の平均賃金'],
+ ['年休の初回付与','6か月継続勤務・8割以上出勤 → 10日'],['割増賃金率','時間外 25%以上（月60h超 50%以上）\n休日 35%以上\n深夜 25%以上'],
+ ['産前産後休業','産前6週間（多胎14週間）※請求\n産後8週間 就業禁止'],['就業規則の作成・届出','常時10人以上'],['産業医・衛生管理者','常時50人以上'],
+ ['休業補償給付','4日目から・給付基礎日額の60%\n（＋休業特別支給金20%）'],['基本手当の被保険者期間','離職前2年間に12か月以上\n（倒産・解雇等は1年間に6か月）'],
+ ['雇用保険の待期','7日'],['労働保険の年度更新','6月1日〜7月10日'],['傷病手当金','待期3日・4日目から\n日額の3分の2・通算1年6か月'],
+ ['出産手当金','産前42日（多胎98日）〜産後56日\n日額の3分の2'],['出産育児一時金','50万円（産科医療補償制度の対象出産）'],
+ ['健保の被扶養者（収入）','130万円未満\n（60歳以上・障害者は180万円未満）'],['標準報酬月額の等級','健康保険 50等級\n厚生年金 32等級'],
+ ['厚生年金の保険料率','18.3%（労使折半）'],['老齢基礎年金の受給資格期間','10年'],['繰上げ・繰下げ','繰上げ 1か月 0.4%減\n繰下げ 1か月 0.7%増（75歳まで）'],
+ ['国民年金保険料の納付期限','翌月末日'],['付加保険料・付加年金','保険料 月400円\n年金 200円×納付月数'],['介護保険の被保険者','第1号 65歳以上\n第2号 40〜64歳の医療保険加入者'],
+ ['後期高齢者医療','75歳以上（一定の障害がある65歳以上）'],['厚年の資格喪失年齢','70歳（健保は75歳）']
+];
+
+/* ===== 保存 ===== */
+const KEY='sr_navi_v1';
+let S={exam:'2027-08-22',qs:{},logs:{},done:{}};
+try{const v=JSON.parse(localStorage.getItem(KEY));if(v)S=Object.assign(S,v);}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+const $=id=>document.getElementById(id);
+const ymd=d=>{const z=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());};
+const today=()=>ymd(new Date());
+const sname=id=>SUBJ.find(s=>s.id===id).name;
+
+/* ===== タブ ===== */
+function go(t){
+  document.querySelectorAll('.tab').forEach(e=>e.classList.toggle('on',e.id==='t-'+t));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+  window.scrollTo(0,0);render();
+}
+
+/* ===== ホーム ===== */
+$('examDate').value=S.exam;
+$('examDate').onchange=e=>{S.exam=e.target.value;save();render();};
+function curPhase(){
+  const m=new Date();const k=m.getFullYear()*12+m.getMonth();
+  const starts=[2026*12+9,2026*12+11,2027*12+1,2027*12+3,2027*12+5,2027*12+7];
+  let i=0;starts.forEach((s,j)=>{if(k>=s)i=j;});return i;
+}
+function render(){
+  const ex=new Date(S.exam+'T00:00:00');const now=new Date(today()+'T00:00:00');
+  const left=Math.round((ex-now)/864e5);
+  $('cd').textContent=isNaN(left)?'-':left;
+  const tot=Object.values(S.logs).reduce((a,b)=>a+b,0);
+  const remainH=Math.max(0,900-tot/60);
+  $('cdsub').textContent=left>0?`目標900時間まであと約${Math.round(remainH)}時間 → 1日平均 約${(remainH/left).toFixed(1)}時間`:'';
+  const ph=ROAD[curPhase()];
+  $('todayPlan').innerHTML=`<div class="step"><b>今の時期：${ph[1]}</b><span class="muted">${ph[2]}</span></div>
+   <div class="muted">① テキストを読む（60〜90分）<br>② 一問一答で確認（10問）<br>③ 数字カードを数枚</div>`;
+  $('sTotal').textContent=(tot/60).toFixed(1)+'h';
+  $('sStreak').textContent=streak()+'日';
+  const st=Object.values(S.qs);const c=st.reduce((a,x)=>a+x.c,0),w=st.reduce((a,x)=>a+x.w,0);
+  $('sRate').textContent=c+w?Math.round(c/(c+w)*100)+'%':'-';
+  $('sWeak').textContent=st.filter(x=>x.bad).length;
+  renderMap();renderSummary();renderLog();
+}
+function streak(){let n=0;const d=new Date();if(!S.logs[ymd(d)])d.setDate(d.getDate()-1);
+  while(S.logs[ymd(d)]){n++;d.setDate(d.getDate()-1);}return n;}
+
+/* ===== マップ ===== */
+$('roadmap').innerHTML=ROAD.map((r,i)=>`<div class="step" style="${i===curPhase()?'border-color:var(--ok)':''}"><b>${r[0]}${i===curPhase()?' ← いまここ':''}</b>${r[1]}<div class="muted">${r[2]}</div></div>`).join('');
+function renderMap(){
+  $('subjList').innerHTML=SUBJ.map(s=>`<details class="subj"><summary><span>${S.done[s.id]?'✅ ':''}${s.name}</span><span class="tag">${s.g}</span></summary>
+   <p>${s.d}</p><p class="muted">💡 ${s.p}<br>⏱ 目安 ${s.h}</p>
+   <label class="chk"><input type="checkbox" ${S.done[s.id]?'checked':''} onchange="S.done['${s.id}']=this.checked;save();render()">テキストを1周した</label>
+   <button class="btn ghost" style="margin-top:8px" onclick="go('quiz');startQuiz('${s.id}')">この科目の○×</button></details>`).join('');
+  const n=SUBJ.filter(s=>S.done[s.id]).length;
+  $('mapBar').style.width=n*10+'%';$('mapTxt').textContent=`1周目：${n}／10科目`;
+}
+
+/* ===== 一問一答 ===== */
+$('qScope').innerHTML='<option value="all">全科目からランダム</option><option value="weak">苦手（間違えた問題）だけ</option>'+SUBJ.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
+let QS=[],qi=0,score=0,answered=false;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function startQuiz(scope){
+  let pool=Q;
+  if(scope==='weak')pool=Q.filter(q=>S.qs[q.id]&&S.qs[q.id].bad);
+  else if(scope==='today'){const done=Object.keys(S.done).filter(k=>S.done[k]);
+    const weak=Q.filter(q=>S.qs[q.id]&&S.qs[q.id].bad);
+    const learned=done.length?Q.filter(q=>done.includes(q.s)):Q.filter(q=>q.s===ROAD_SUBJ[curPhase()]||ROAD_SUBJ[curPhase()]==='all'||q.s==='roki');
+    pool=[...new Set([...shuffle(weak).slice(0,4),...learned])];}
+  else if(scope!=='all')pool=Q.filter(q=>q.s===scope);
+  if(!pool.length){$('qSummary').innerHTML='<p class="muted">対象の問題がありません。まずは全科目で解いてみましょう。</p>';$('quizSetup').style.display='';$('quizBox').style.display='none';return;}
+  QS=scope==='today'?pool.slice(0,10):shuffle([...pool]).slice(0,10);
+  if(scope==='today')QS=shuffle(QS);
+  qi=0;score=0;$('quizSetup').style.display='none';$('quizBox').style.display='';showQ();
+}
+const ROAD_SUBJ=['roki','rosai','kenpo','kosei','all','all'];
+function showQ(){
+  answered=false;const q=QS[qi];
+  $('qTag').textContent=sname(q.s);$('qNum').textContent=`${qi+1} / ${QS.length}`;
+  $('qText').textContent=q.q;$('qFb').innerHTML='';$('qBtns').style.display='';
+}
+function answer(v){
+  if(answered)return;answered=true;const q=QS[qi];const ok=v===q.a;
+  const st=S.qs[q.id]||(S.qs[q.id]={c:0,w:0,bad:false});
+  if(ok){st.c++;score++;if(st.bad&&st.c>=2)st.bad=false;}else{st.w++;st.bad=true;}
+  save();$('qBtns').style.display='none';
+  $('qFb').innerHTML=`<div class="fb ${ok?'ok':'ng'}"><b>${ok?'正解！':'不正解'}　答え：${q.a?'○':'×'}</b><p style="margin:6px 0 0">${q.e}</p></div>
+   <button class="btn wide" style="margin-top:12px" onclick="nextQ()">${qi+1<QS.length?'次の問題':'結果を見る'}</button>`;
+}
+function nextQ(){
+  qi++;if(qi<QS.length){showQ();return;}
+  $('quizBox').style.display='none';$('quizSetup').style.display='';
+  $('qSummary').innerHTML=`<div class="fb ${score/QS.length>=0.7?'ok':'ng'}"><b>${QS.length}問中 ${score}問正解</b><p style="margin:6px 0 0">${score/QS.length>=0.7?'いい調子！本番の目安は7割です。':'間違えた問題は「苦手だけ」で繰り返しましょう。2回正解で苦手リストから外れます。'}</p></div>`;
+  render();
+}
+function renderSummary(){
+  const rows=SUBJ.map(s=>{const qs=Q.filter(q=>q.s===s.id);let c=0,w=0;qs.forEach(q=>{const x=S.qs[q.id];if(x){c+=x.c;w+=x.w;}});
+    const r=c+w?Math.round(c/(c+w)*100):null;
+    return `<tr><td>${s.name}</td><td>${qs.length}問</td><td>${r===null?'-':r+'%'}</td></tr>`;}).join('');
+  if(!$('qSummary').innerHTML.includes('fb'))$('qSummary').innerHTML=`<table><tr><th>科目</th><th>収録</th><th>正答率</th></tr>${rows}</table>`;
+}
+
+/* ===== カード ===== */
+let order=CARDS.map((_,i)=>i),ci=0,back=false;
+function showCard(){const c=CARDS[order[ci]];$('flash').classList.toggle('back',back);
+  $('flash').innerHTML=(back?c[1]:c[0]+'<br><span class="muted" style="font-weight:400">は？</span>').replace(/\n/g,'<br>');
+  $('cardNum').textContent=`${ci+1} / ${CARDS.length}`;}
+function flip(){back=!back;showCard();}
+function moveCard(d){ci=(ci+d+CARDS.length)%CARDS.length;back=false;showCard();}
+function shuffleCards(){shuffle(order);ci=0;back=false;showCard();}
+showCard();
+
+/* ===== 記録 ===== */
+function addMin(m){if(!m||m<0)return;S.logs[today()]=(S.logs[today()]||0)+m;save();$('minIn').value='';render();}
+function resetToday(){delete S.logs[today()];save();render();}
+function resetAll(){if(confirm('学習記録・正答データをすべて消去しますか？')){S.qs={};S.logs={};S.done={};save();render();}}
+function renderLog(){
+  const t=S.logs[today()]||0;$('todayMin').textContent=`今日：${Math.floor(t/60)}時間${t%60}分`;
+  let html='';const d=new Date();d.setDate(d.getDate()-27);let wk=0;
+  for(let i=0;i<28;i++){const k=ymd(d);const m=S.logs[k]||0;if(i>=21)wk+=m;
+    html+=`<div class="${m>=180?'l3':m>=90?'l2':m>0?'l1':''}" title="${k} ${m}分">${d.getDate()}</div>`;d.setDate(d.getDate()+1);}
+  $('days').innerHTML=html;
+  $('paceTxt').textContent=`直近7日：${(wk/60).toFixed(1)}時間（目安は週20時間前後）`;
+}
+render();
+</script>
+</body>
+</html>
